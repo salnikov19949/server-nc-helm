@@ -9,6 +9,7 @@ spec:
   source:
     repoURL: https://github.com/salnikov19949/server-nc-helm.git
     targetRevision: HEAD
+    path: ./service-nc
     helm:
       releaseName: service-nc
   destination: 
