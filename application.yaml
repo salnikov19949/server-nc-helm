@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-argo-application
+  name: service-nc
   namespace: argocd
 spec:
   project: default
@@ -9,7 +9,8 @@ spec:
   source:
     repoURL: https://github.com/salnikov19949/server-nc-helm.git
     targetRevision: HEAD
-    path: dev
+    helm:
+      releaseName: service-nc
   destination: 
     server: https://kubernetes.default.svc
     namespace: myapp
