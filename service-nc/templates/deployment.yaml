@@ -34,10 +34,10 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-          - containerPort: 6060
+          - containerPort: 80
           livenessProbe:
             tcpSocket:
-              port: 6060
+              port: 80
             initialDelaySeconds: 15
             periodSeconds: 20      
           resources:
