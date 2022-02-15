@@ -34,7 +34,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["/bin/bash"]
-          args: ["while true;do nc -nlp 6050;done"]
+          args: ["-c", "while true;do nc -nlp 6050;done"]
           ports:
           - containerPort: 6050
           livenessProbe:
